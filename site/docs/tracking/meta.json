@@ -1,8 +1,8 @@
 {
-  "title": "Tracking",
+  "title": "Experiment Tracking",
   "pages": [
     "overview",
-    "tracking",
+    "logging",
     "visualizations",
     "runs-dashboard"
   ]

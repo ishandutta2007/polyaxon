@@ -27,8 +27,33 @@ The [context](/docs/references/polyaxonfile/context/overview/) explains how Poly
 
 Use the context reference when you need to inject dynamic values such as project metadata, params, artifacts, or connection information into a Polyaxonfile.
 
+## Runtimes
+
+The [runtime references](/docs/references/polyaxonfile/runtimes/overview/) define the `run` schemas used by components:
+
+- [Job](/docs/references/polyaxonfile/runtimes/job/)
+- [Service](/docs/references/polyaxonfile/runtimes/service/)
+- [Distributed runtimes](/docs/references/polyaxonfile/runtimes/distributed/overview/)
+- [Cluster runtimes](/docs/references/polyaxonfile/runtimes/clusters/overview/)
+
+## Automation
+
+The [automation references](/docs/references/polyaxonfile/automation/overview/) define DAGs, mapping, matrix search, schedules, joins, hooks, events, and builds.
+
+Start with the automation schemas when you need exact fields for workflow control:
+
+- [DAG](/docs/references/polyaxonfile/automation/dag/)
+- [Matrix](/docs/references/polyaxonfile/automation/matrix/overview/)
+- [Schedules](/docs/references/polyaxonfile/automation/schedules/overview/)
+- [Build](/docs/references/polyaxonfile/automation/build/)
+
+## Helpers
+
+The [helper references](/docs/references/polyaxonfile/helpers/overview/) define cache, concurrency, and early stopping schemas used by automation runtimes.
+
 ## Related Docs
 
 - [Scheduling](/docs/scheduling/overview/) explains how workloads are routed through queues, presets, resources, approvals, and Kubernetes entities.
-- [Workloads](/docs/workload/overview/) explains the job, service, distributed, and cluster workload types that Polyaxonfiles can run.
+- [Compute](/docs/compute/jobs/) explains the job and service workload types that Polyaxonfiles can run.
+- [Distributed Compute](/docs/distributed-compute/overview/) explains distributed jobs and cluster workload types.
 - [CLI](/docs/references/cli/overview/) explains how to validate and submit Polyaxonfiles from the command line.

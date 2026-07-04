@@ -24,7 +24,7 @@ os.environ["POLYAXON_NO_OP"] = "true"
 os.environ["POLYAXON_NO_OP"] = "1"
 ```
 
-## Disabling Polyaxon clients without changing code
+## Disabling clients and tracking without changing code
 
 Since using the Polyaxon client and the tracking API requires code change, e.g.
 
@@ -39,6 +39,16 @@ project_client.list_runs()
 project_client.list_versions()
 run_client.refresh_data()
 run_client.log_inputs(...)
+```
+
+or:
+
+```python
+from polyaxon.tracking import Run
+
+run = Run()
+# training code ...
+run.log_metrics(step=1000, loss=0.01, accuracy=0.97)
 ```
 
 Users might need to run the same code outside of a Polyaxon context,

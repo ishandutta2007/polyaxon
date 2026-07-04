@@ -15,7 +15,7 @@ containers before the main container containing the logic for training models
 or processing data.
 
 Polyaxon init section is an extension of
-[Kubernetes init containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/).  
+[Kubernetes init containers](https://kubernetes.io/docs/concepts/workloads/pods/init-containers/).
 
 Polyaxon init section has special handlers for several connections in addition to the possibility for the users to
 provide their own containers and run any custom init containers which can contain utilities
@@ -127,7 +127,7 @@ component = V1Component(
                 connection="gcs-large-datasets",
                 artifacts=V1ArtifactsType(dirs=["data"]),
                 container=k8s.V1Container(
-                    resources=k8s.V1ResourceRequirements(requests={"memory": "256Mi", "cpu": "500m"}), 
+                    resources=k8s.V1ResourceRequirements(requests={"memory": "256Mi", "cpu": "500m"}),
                 )
             ),
             V1Init(

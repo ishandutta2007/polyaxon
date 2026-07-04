@@ -1,0 +1,44 @@
+---
+title: "Distributed Compute"
+description: "Run distributed jobs and cluster runtimes with Polyaxon."
+---
+
+Polyaxon supports scale-out workloads through distributed job operators and cluster runtimes.
+
+Use this section when a single job or service is not enough for the workload shape:
+
+- [Distributed jobs](/docs/distributed-compute/distributed-jobs/overview/) run training and data-processing workloads through operators such as TFJob, MPIJob, PyTorchJob, and MXNetJob.
+- [Clusters](/docs/distributed-compute/clusters/overview/) run Ray and Dask clusters for distributed compute workloads.
+
+## Distributed job example
+
+Running a distributed job is similar to running a normal job, but the runtime declares multiple replicas managed by a distributed operator.
+
+In this example, we will just show a Tensorflow distributed experiment based on TFJob. But the same principle applies to other supported operators.
+
+```yaml
+version: 1.1
+kind: component
+run:
+  kind: tfjob
+  chief:
+    connections: [my-training-dataset]
+    container:
+      image: image-with-default-entrypoint
+  worker:
+    replicas: 2
+    environment:
+      restartPolicy: OnFailure
+    connections: [my-training-dataset]
+    container:
+      image: image-with-default-entrypoint
+      resources:
+        limits:
+          nvidia.com/gpu: 1
+```
+
+This will start a TFJob with 1 replica of type chief and 2 workers.
+
+## Learn More
+
+Check the [distributed jobs](/docs/distributed-compute/distributed-jobs/overview/) and [clusters](/docs/distributed-compute/clusters/overview/) sections for runtime-specific details.

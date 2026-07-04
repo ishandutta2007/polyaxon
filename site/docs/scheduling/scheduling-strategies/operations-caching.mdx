@@ -10,7 +10,7 @@ Polyaxon's operation cache is a feature to reduce the cost and execution time by
 Oftentimes, operations can perform expensive computations to produce some outputs.
 In order to leverage those results, without rerunning the same operations, Polyaxon provides a state that users can use to check if a computation is already performed or not.
 
-> Please check the [cache specification](/docs/orchestration/helpers/cache/) for more details.
+> Please check the [cache specification](/docs/references/polyaxonfile/helpers/cache/) for more details.
 
 ## Cache validation
 
@@ -33,7 +33,7 @@ As soon as the original operation is done, Polyaxon will propagate the results t
 ## Caching and artifacts
 
 At the moment and in order to use the cache, users have to define the configuration that needs to be used in the state calculation via the params, otherwise, all params are considered in the calculation
-(please check [cache specification](/docs/orchestration/helpers/cache/) for more details).
+(please check [cache specification](/docs/references/polyaxonfile/helpers/cache/) for more details).
 
 If you need to include an artifact in the state calculation, you can report a lineage metadata about that artifact, for example, the path or a hash, and set that value as an input.
 

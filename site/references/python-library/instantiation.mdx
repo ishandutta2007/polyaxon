@@ -21,6 +21,14 @@ project_client = ProjectClient()
 run_client = RunClient()
 ```
 
+or with the tracking module:
+
+```python
+from polyaxon import tracking
+
+tracking.init()
+```
+
 Polyaxon provides a context for all its runs enabling users to access scoped tokens to communicate with the API.
 Additionally, the client will automatically resolve the currently running operation and the project it belongs to.
 
@@ -34,6 +42,22 @@ from polyaxon.client import ProjectClient, RunClient
 
 project_client = ProjectClient()
 run_client = RunClient()
+```
+
+or with tracking:
+
+```python
+from polyaxon import tracking
+
+tracking.init()
+```
+
+To force a new tracking run instead of resuming the cached one:
+
+```python
+from polyaxon import tracking
+
+tracking.init(is_new=True)
 ```
 
 The client will check for the currently authenticated user and raise if non found.
@@ -75,6 +99,14 @@ project_client = ProjectClient()
 run_client = RunClient()
 ```
 
+or:
+
+```python
+from polyaxon import tracking
+
+tracking.init()
+```
+
 Configuring and authenticating a client using environment variables could be useful to keep your code behave similarly in different environments.
 
 ### Provide a configured client:
@@ -87,6 +119,18 @@ client = PolyaxonClient(token=API_TOKEN,
 
 project_client = ProjectClient(owner="org1", project="project-name", client=client)
 run_client = RunClient(owner="org1", project="project-name", run_uuid="uuid", client=client)
+```
+
+For tracking:
+
+```python
+from polyaxon import tracking
+from polyaxon.client import PolyaxonClient, RunClient
+
+client = PolyaxonClient(token=API_TOKEN,
+                        config=ClientConfig(host=HOST, use_https=None, verify_ssl=None))
+run_client = RunClient(client=client)
+tracking.init(client=run_client)
 ```
 
 > **Note**: `API_TOKEN` is only required for EE and Cloud
@@ -106,6 +150,14 @@ project_client = ProjectClient(project="project-name")
 run_client = RunClient(project="project-name")
 ```
 
+For tracking:
+
+```python
+from polyaxon import tracking
+
+tracking.init(project="project-name")
+```
+
 Example providing the project and the organization, if the user has access to multiple organizations:
 
 ```python
@@ -119,6 +171,16 @@ project_client = ProjectClient(owner="org-name", project="project-name")
 run_client = RunClient(owner="org-name", project="project-name")
 ```
 
+For tracking:
+
+```python
+from polyaxon import tracking
+
+tracking.init(project="org-name/project-name")
+# Or
+tracking.init(owner="org-name", project="project-name")
+```
+
 Example changing the run while defaulting to the same project:
 
 ```python
@@ -126,6 +188,14 @@ from polyaxon.client import ProjectClient, RunClient
 
 project_client = ProjectClient()
 run_client = RunClient(run_uuid="uuid")
+```
+
+For tracking:
+
+```python
+from polyaxon import tracking
+
+tracking.init(run_uuid="uuid")
 ```
 
 > **Note**: If your script depends on a context and Polyaxon does not find any defined context it will raise an error.

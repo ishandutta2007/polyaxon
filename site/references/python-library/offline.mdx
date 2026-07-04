@@ -1,6 +1,5 @@
 ---
-title: "Tracking offline"
-sidebarTitle: "Offline Tracking"
+title: "Offline Mode"
 description: "Polyaxon's Python library enables users to perform all API calls and artifacts tracking logic offline."
 ---
 
@@ -46,6 +45,85 @@ print(run_client.run_data)
 run_client.persist_run(path="/tmp/offline/")
 ```
 
+or with the tracking `Run` class:
+
+```python
+from polyaxon.tracking import Run
+
+run = Run(..., is_offline=True, ...)
+...
+run.log_metrics(m1=2.3, m2=0.1, step=2)
+run.log_outputs(result1=11, result2="foo")
+...
+print(run.run_uuid)
+print(run.run_data)
+```
+
+or with the tracking module:
+
+```python
+from polyaxon import tracking
+
+tracking.init(..., is_offline=True, ...)
+...
+tracking.log_metrics(m1=2.3, m2=0.1, step=2)
+tracking.log_outputs(result1=11, result2="foo")
+...
+print(tracking.TRACKING_RUN.run_uuid)
+print(tracking.TRACKING_RUN.run_data)
+```
+
+## Offline tracking
+
+If you are running outside of a Polyaxon cluster:
+
+```python
+from polyaxon import tracking
+
+if __name__ == "__main__":
+    # Uses the project from the local cache, otherwise raises.
+    tracking.init(is_offline=True)
+
+    ...
+```
+
+You can also provide the project manually:
+
+```python
+from polyaxon import tracking
+
+if __name__ == "__main__":
+    tracking.init(project="owner/project", name="run1", is_offline=True)
+
+    ...
+```
+
+## Tracking multiple offline runs
+
+If you need to track multiple offline runs:
+
+```python
+from polyaxon import tracking
+
+# Start run1
+tracking.init(name="run1", is_new=True, is_offline=True)
+
+# ...
+
+# End run1
+tracking.end()
+
+# ...
+
+# Start run2
+tracking.init(project="owner/project2", name="run2", is_new=True, is_offline=True)
+
+# ...
+
+# End run2
+tracking.end()
+```
+
 ## Resuming an offline run
 
 If you are running outside of a Polyaxon cluster and you need to resume an offline run:
@@ -59,4 +137,12 @@ run_client = RunClient.load_offline_run(path="/tmp/offline", raise_if_not_found=
 print(run_client.run_uuid)
 print(run_client.run_data)
 ...
+```
+
+Using tracking:
+
+```python
+from polyaxon import tracking
+
+tracking.init(run_uuid="UUID_OF_THE_PREVIOUS_OFFLINE_RUN")
 ```

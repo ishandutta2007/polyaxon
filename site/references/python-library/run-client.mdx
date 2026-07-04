@@ -159,7 +159,7 @@ This is a generic create function, you can check other methods for creating runs
   - __content__: str or Dict or V1Operation, optional.
   - __is_managed__: bool, flag to create a managed run.
   - __managed_by__: ManagedBy, optional, service that manages the operation.
-  - __pending__: str, to specify if the run is pending approval (requires human validation) or pending upload.  
+  - __pending__: str, to specify if the run is pending approval (requires human validation) or pending upload.
   - __meta_info__: dict, meta info to create the run with.
 
 - __Returns__:
@@ -207,11 +207,11 @@ if you run a component/operation from the CLI/UI an instance will be created aut
         use the agent's namespace.
   - __nocache__: bool, optional, DEPRECATED Please use `cache='f'`
         simple flag to disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile has cache section,
         it will be patched with `disabled: true`.
   - __cache__: Union[int, str, bool], optional, simple flag to enable/disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile will be patched with `disabled: true/false`.
         e.g. `cache=1`, `cache='yes'`, `cache=False`, `cache='t'`, ...
   - __approved__: Union[int, str, bool], optional, simple flag to enable/disable
@@ -265,11 +265,11 @@ if you run a component/operation from the CLI/UI an instance will be created aut
         use the agent's namespace.
   - __nocache__: bool, optional, DEPRECATED Please use `cache='f'`
         simple flag to disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile has cache section,
         it will be patched with `disabled: true`.
   - __cache__: Union[int, str, bool], optional, simple flag to enable/disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile will be patched with `disabled: true/false`.
         e.g. `cache=1`, `cache='yes'`, `cache=False`, `cache='t'`, ...
   - __approved__: Union[int, str, bool], optional, simple flag to enable/disable
@@ -322,11 +322,11 @@ If the component has required inputs, you should pass the params.
         use the agent's namespace.
   - __nocache__: bool, optional, DEPRECATED Please use `cache='f'`
         simple flag to disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile has cache section,
         it will be patched with `disabled: true`.
   - __cache__: Union[int, str, bool], optional, simple flag to enable/disable
-        [cache check](/docs/orchestration/helpers/cache/).
+        [cache check](/docs/references/polyaxonfile/helpers/cache/).
         If passed and the Polyaxonfile will be patched with `disabled: true/false`.
         e.g. `cache=1`, `cache='yes'`, `cache=False`, `cache='t'`, ...
   - __approved__: Union[int, str, bool], optional, simple flag to enable/disable
@@ -876,9 +876,9 @@ Restarts the current run
         config to use for overriding the original run's config.
         If `recompile` is `True` the content will be used as a full specification.
   - __copy__: bool, optional, default: False, to restart with copy mechanism.
-  - __recompile__: bool, optional, default: False, to restart a full specification polyaxonfile instead of an override.  
+  - __recompile__: bool, optional, default: False, to restart a full specification polyaxonfile instead of an override.
   - __copy_dirs__: List[str], optional, default: None or all in copy mode, list of dirs to copy.
-  - __copy_files__: List[str], optional, default: None or all in copy mode, list of files to copy.  
+  - __copy_files__: List[str], optional, default: None or all in copy mode, list of files to copy.
   - __name__: str, optional, default: None, name to use for the restarted run.
   - __description__: str, optional, default: None, description to use for the restarted run.
   - __tags__: list[str], optional, default: None, tags to use for the restarted run.
@@ -905,7 +905,7 @@ Resumes the current run
   - __content__: Dict or str, optional,
         config to use for overriding the original run's config.
         If `recompile` is `True` the content will be used as a full specification.
-  - __recompile__: bool, optional, default: False, to restart a full specification polyaxonfile instead of an override.  
+  - __recompile__: bool, optional, default: False, to restart a full specification polyaxonfile instead of an override.
   - __name__: str, optional, default: None, name to use for the restarted run.
   - __description__: str, optional, default: None, description to use for the restarted run.
   - __tags__: list[str], optional, default: None, tags to use for the restarted run.

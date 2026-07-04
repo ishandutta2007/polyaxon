@@ -1,8 +1,0 @@
-{
-  "pages": [
-    "with-args",
-    "with-env-vars",
-    "with-python-library",
-    "as-dictionaries"
-  ]
-}

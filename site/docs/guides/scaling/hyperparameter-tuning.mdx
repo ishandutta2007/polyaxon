@@ -54,7 +54,7 @@ If you have cloned the quick-start repo, you can run:
 polyaxon run -f optimization/hyperparams_grid.yaml
 ```
 
-> For more details check the [grid search reference](/docs/orchestration/optimization-engine/grid-search/)
+> For more details check the [grid search reference](/docs/references/polyaxonfile/automation/matrix/grid-search/)
 
 You can also use the CLI to run this operation without creating a Polyaxonfile:
 
@@ -96,7 +96,7 @@ polyaxon run --url https://raw.githubusercontent.com/polyaxon/polyaxon-quick-sta
 
 Random search also provides access to the continuous distributions in addition to the discrete distributions.
 
-> For more details check the [random search reference](/docs/orchestration/optimization-engine/random-search/)
+> For more details check the [random search reference](/docs/references/polyaxonfile/automation/matrix/random-search/)
 
 You can also use the CLI to run this operation without creating a Polyaxonfile:
 
@@ -106,11 +106,11 @@ polyaxon run --url https://raw.githubusercontent.com/polyaxon/polyaxon-quick-sta
 
 ## Learn More
 
-Polyaxon provides several generators for defining a [search space](/docs/orchestration/optimization-engine/params/) and several
+Polyaxon provides several generators for defining a [search space](/docs/references/polyaxonfile/automation/matrix/params/) and several
 [search algorithms for hyperparameter tuning](/docs/orchestration/optimization-engine/).
 
-You can also learn about tools to [control caching](/docs/orchestration/helpers/cache/) of executions with similar configurations,
-and [concurrency](/docs/orchestration/helpers/concurrency/) for enforcing of parallelism.
-Finally, every pipeline in Polyaxon can also define [early stopping strategies](/docs/orchestration/helpers/early-stopping/).
+You can also learn about tools to [control caching](/docs/references/polyaxonfile/helpers/cache/) of executions with similar configurations,
+and [concurrency](/docs/references/polyaxonfile/helpers/concurrency/) for enforcing of parallelism.
+Finally, every pipeline in Polyaxon can also define [early stopping strategies](/docs/references/polyaxonfile/helpers/early-stopping/).
 
 The repo contains more hyperparameter tuning examples in the automation folder.

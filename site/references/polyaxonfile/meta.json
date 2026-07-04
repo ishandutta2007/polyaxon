@@ -3,6 +3,9 @@
   "pages": [
     "overview",
     "specification",
-    "context"
+    "context",
+    "runtimes",
+    "automation",
+    "helpers"
   ]
 }

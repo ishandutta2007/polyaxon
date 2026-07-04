@@ -3,6 +3,8 @@
   "pages": [
     "overview",
     "instantiation",
+    "in-cluster",
+    "in-notebooks",
     "exception-handling",
     "reading-polyaxonfiles",
     "no-op",
@@ -10,6 +12,7 @@
     "polyaxon-client",
     "organization-client",
     "project-client",
-    "run-client"
+    "run-client",
+    "tracking"
   ]
 }

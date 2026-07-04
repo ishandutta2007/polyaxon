@@ -1,0 +1,57 @@
+---
+title: "In-cluster Mode"
+description: "Polyaxon can configure Python clients and tracking APIs automatically when code runs inside a managed job or service."
+---
+
+## Overview
+
+When Python code runs inside a Polyaxon-managed job or service, Polyaxon exposes a runtime context.
+Python clients and tracking APIs can use that context without passing owner, project, run UUID, host, or token values manually.
+
+The context includes a scoped token for API calls and enough metadata to resolve the current project and run.
+
+## Clients
+
+Python clients can load the in-cluster context directly:
+
+```python
+from polyaxon.client import ProjectClient, RunClient
+
+project_client = ProjectClient()
+run_client = RunClient()
+```
+
+## Tracking
+
+The tracking module uses the same context:
+
+```python
+from random import random, randint
+
+from polyaxon import tracking
+from polyaxon.schemas import V1ArtifactKind
+
+if __name__ == "__main__":
+    # No need to specify owner, project, or run UUID in-cluster.
+    tracking.init()
+
+    tracking.log_inputs(param1=randint(0, 100))
+    tracking.log_tags(["foo", "bar"])
+
+    tracking.log_metric(name="metric1", value=random(), step=OPTIONAL, timestamp=OPTIONAL)
+    tracking.log_metrics(metric2=random(), metric3=random(), step=OPTIONAL, timestamp=OPTIONAL)
+
+    tracking.log_outputs(res1=randint(0, 100), res2="test value", ...)
+
+    asset_path = tracking.get_outputs_path("test.txt")
+    with open(asset_path, "w") as f:
+        f.write("Artifact content.")
+    tracking.log_artifact_ref(path=asset_path, kind=V1ArtifactKind.FILE)
+
+    asset_path = tracking.get_outputs_path("file.csv")
+    with open(asset_path, "w") as f:
+        f.write("Artifact content.")
+    tracking.log_artifact_ref(path=asset_path, kind=V1ArtifactKind.CSV, name="my-csv")
+```
+
+For general context resolution rules, see [instantiation](/docs/references/python-library/instantiation/).

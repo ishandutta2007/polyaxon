@@ -1,0 +1,40 @@
+---
+title: "In notebook sessions"
+description: "Use Polyaxon's Python library from notebook sessions, including in-cluster notebooks and multi-run tracking."
+---
+
+## Overview
+
+Notebook sessions can use the same Python clients and tracking APIs as jobs and services.
+When a notebook runs in-cluster, Polyaxon resolves the project, run, API host, and scoped token from the runtime context.
+When a notebook runs outside Polyaxon, configure context with the CLI, environment variables, or explicit client arguments.
+
+## Multi-run tracking
+
+Notebook sessions often need to track more than one run in a single kernel.
+Start each run explicitly, end it, then start the next one:
+
+```python
+from polyaxon import tracking
+
+# Start run1
+tracking.init(name="run1", is_new=True)
+
+# ...
+
+# End run1
+tracking.end()
+
+# ...
+
+# Start run2
+tracking.init(name="run2", is_new=True)
+
+# ...
+
+# End run2
+tracking.end()
+```
+
+If the notebook runs in-cluster, context is resolved automatically.
+If it runs outside Polyaxon, see [instantiation](/docs/references/python-library/instantiation/) for context options.

@@ -6,7 +6,8 @@ description: "Polyaxon's Python library raises some of its own exceptions as wel
 
 ## Overview
 
-Polyaxon's Python library raises some of its own exceptions as well as standard Python exceptions.  
+Polyaxon's Python library raises some of its own exceptions as well as standard Python exceptions.
+The tracking module uses the same exception model, and can also raise exceptions from logging libraries such as `matplotlib` or `pandas`.
 
 ## Core Exceptions
 
@@ -30,4 +31,14 @@ When performing API calls using the Python client, Polyaxon will raise:
 
 ```python
 from polyaxon.exceptions import PolyaxonClientException, PolyaxonHTTPError
+```
+
+## Data validation
+
+When logging metadata or artifacts, tracking calls can also raise:
+
+```python
+TypeError
+ValueError
+OSError
 ```

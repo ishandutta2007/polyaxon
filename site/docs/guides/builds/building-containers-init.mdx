@@ -44,7 +44,7 @@ we are using the `runPatch` section to add the init section to the job.
 The `runPatch` allows us to patch the component definition without having to rewrite it from scratch,
 in this case, we are generating a dockerfile.
 The dockerfile we are generating is a based on a tensorflow docker image and
-we are just installing `polyaxon` library and some extra dependencies to use with the [tracking module](/docs/tracking/tracking/).
+we are just installing `polyaxon` library and some extra dependencies to use with the [tracking module](/docs/tracking/logging/overview/).
 
 The `hubRef` is the reference of the component we are going to run, in this case, it's a Kaniko component for building the image.
 

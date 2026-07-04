@@ -99,7 +99,7 @@ environment = V1Environment(
 
 ### labels
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
 
 > Labels are key/value pairs that are attached to objects, such as pods.
 > Labels are intended to be used to specify identifying attributes of objects that
@@ -117,7 +117,7 @@ environment:
 
 ### annotations
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
 
 > You can use Kubernetes annotations to attach arbitrary non-identifying metadata to objects.
 > Clients such as tools and libraries can retrieve this metadata.
@@ -131,7 +131,7 @@ environment:
 
 ### nodeSelector
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector)
 
 > nodeSelector is the simplest recommended form of node selection constraint.
 > nodeSelector is a field of PodSpec. It specifies a map of key-value pairs.
@@ -147,7 +147,7 @@ environment:
 
 ### affinity
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity)
 
 > The affinity/anti-affinity feature, greatly expands the types of constraints you can express.
 
@@ -164,7 +164,7 @@ environment:
 
 ### tolerations
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)
 
 > Tolerations are applied to pods, and allow (but do not require)
 > the pods to schedule onto nodes with matching taints.
@@ -179,7 +179,7 @@ environment:
 
 ### nodeName
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodename)
 
 > nodeName is the simplest form of node selection constraint,
 > but due to its limitations it is typically not used. nodeName is a field of PodSpec.
@@ -194,7 +194,7 @@ environment:
 
 ### serviceAccountName
 
-From [Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)  
+From [Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
 
 > A service account provides an identity for processes that run in a Pod.
 
@@ -221,7 +221,7 @@ rules:
 
 ### hostAliases
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 
 > Adding entries to a Pod’s /etc/hosts file provides Pod-level override of hostname resolution
 > when DNS and other options are not applicable. In 1.7,
@@ -239,7 +239,7 @@ environment:
 
 ### securityContext
 
-From [Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)  
+From [Kubernetes docs](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 > A security context defines privilege and access control settings for a Pod or Container.
 
@@ -253,7 +253,7 @@ environment:
 
 ### imagePullSecrets
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod)
 
 > ImagePullSecrets is a list of references to secrets in the same namespace
 > to use for pulling any images in pods that reference this ServiceAccount.
@@ -267,7 +267,7 @@ environment:
 
 ### hostNetwork
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces)
 
 > Controls whether the pod may use the node network namespace.
 > Gives the pod access to the loopback device, services listening on localhost,
@@ -280,7 +280,7 @@ environment:
 
 ### hostPID
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/policy/pod-security-policy/#host-namespaces)
 
 > Controls whether the pod containers can share the host process ID namespace.
 > Note that when paired with ptrace this can be used to escalate privileges outside
@@ -293,7 +293,7 @@ environment:
 
 ### dnsPolicy
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pods-dns-policy)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pods-dns-policy)
 
 > Set DNS policy for the pod.
 > Defaults to "ClusterFirst".
@@ -309,7 +309,7 @@ environment:
 
 ### dnsConfig
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pods-dns-config)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pods-dns-config)
 
 > Pod’s DNS Config allows users more control on the DNS settings for a Pod.
 
@@ -329,7 +329,7 @@ environment:
 
 ### schedulerName
 
-From [Kubernetes docs](https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/)  
+From [Kubernetes docs](https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/)
 
 > If specified, the pod will be dispatched by the specified scheduler.
 > Or it will be dispatched by workflow scope scheduler if specified.
@@ -342,7 +342,7 @@ environment:
 
 ### priorityClassName
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)
 
 > Pods can have priority.
 > Priority indicates the importance of a Pod relative to other Pods.
@@ -356,7 +356,7 @@ environment:
 
 ### priority
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/)
 
 > Pods can have priority.
 > Priority indicates the importance of a Pod relative to other Pods.
@@ -370,7 +370,7 @@ environment:
 
 ### restartPolicy
 
-From [Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy)  
+From [Kubernetes docs](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#restart-policy)
 
 > A PodSpec has a restartPolicy field with possible values Always, OnFailure, and Never.
 > The default value is Always.
