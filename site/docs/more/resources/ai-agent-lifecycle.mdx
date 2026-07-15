@@ -30,7 +30,7 @@ across tickets and notebooks.
 
 Prompts are application logic. They should not be trapped in source code or
 changed without a record of what happened. Polyaxon
-[Prompt Management](/docs/prompt-management/overview) lets teams store,
+[Prompt Management](/docs/registry/prompt-management/overview) lets teams store,
 version, label, and retrieve prompts from one place.
 
 This makes prompt iteration easier to review. Teams can compare prompt versions,
@@ -75,7 +75,7 @@ way to ship agents.
 ## Evaluation
 
 Evaluations turn agent behavior into something teams can review. Polyaxon
-[Evaluation](/docs/evaluation/overview) supports datasets, experiments, human
+[Evaluation](/docs/more/resources/ai-agent-lifecycle) supports datasets, experiments, human
 annotations, custom scores, and LLM-as-judge workflows.
 
 Offline evals are useful before release. They check prompt changes, model
@@ -90,7 +90,7 @@ agent is ready.
 ## Observability
 
 Once an agent is running, traces become the main debugging surface. Polyaxon
-[Observability](/docs/observability/overview) captures traces, sessions, and
+[Observability](/docs/tracking/runs-dashboard/monitoring) captures traces, sessions, and
 observations for LLM calls, retrieval steps, tool executions, custom logic,
 latency, token usage, and cost.
 
@@ -152,8 +152,8 @@ reindexing jobs, regression checks before prompt promotion, and follow-up runs
 after failed traces.
 
 Polyaxon orchestration can connect these steps with
-[DAGs](/docs/orchestration/flow-engine/), [schedules](/docs/orchestration/schedules/),
-and [hooks](/docs/orchestration/hooks/). The same platform can run evaluation
+[DAGs](/docs/references/polyaxonfile/orchestration/dag/overview/), [schedules](/docs/references/polyaxonfile/orchestration/schedules/overview/),
+and [hooks](/docs/references/polyaxonfile/orchestration/hooks/overview/). The same platform can run evaluation
 jobs, collect outputs, preserve artifacts, and trigger the next step.
 
 The test is blunt: if the team repeats the same manual review or validation

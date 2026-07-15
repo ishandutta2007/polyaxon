@@ -29,7 +29,7 @@ mount paths, their results are already hard to compare.
 ## Data Exploration
 
 Early exploration often happens in notebooks, shells, or small scripts. Polyaxon
-supports that work through [services](/docs/compute/services/), notebooks,
+supports that work through [service runtimes](/docs/references/polyaxonfile/runtimes/services/specification/), notebooks,
 interactive apps, and sandbox-style workflows that run inside the same managed
 environment as the rest of the platform.
 
@@ -62,7 +62,7 @@ models, more trials, multiple GPUs, distributed training, or many parallel
 variants. Polyaxon schedules workloads on Kubernetes and supports jobs,
 services, DAGs, distributed jobs, and matrix executions.
 
-The [optimization engine](/docs/orchestration/optimization-engine/) can run grid
+The [optimization engine](/docs/references/polyaxonfile/orchestration/matrix/overview/) can run grid
 search, random search, Bayesian optimization, Hyperband, Hyperopt, and custom
 iterative processes. Queues, presets, concurrency controls, caching, and early
 stopping help teams use shared compute without letting one workflow consume the
@@ -139,10 +139,10 @@ The later stages of the lifecycle should not depend on people remembering every
 manual step. Polyaxon provides orchestration tools for DAGs, schedules, hooks,
 events, mapping, and hyperparameter optimization.
 
-The [flow engine](/docs/orchestration/flow-engine/) can connect preparation,
+The [flow engine](/docs/references/polyaxonfile/orchestration/dag/overview/) can connect preparation,
 training, evaluation, packaging, and validation steps into repeatable pipelines.
-[Schedules](/docs/orchestration/schedules/) can run recurring workflows, and
-[hooks](/docs/orchestration/hooks/) can trigger follow-up actions when runs
+[Schedules](/docs/references/polyaxonfile/orchestration/schedules/overview/) can run recurring workflows, and
+[hooks](/docs/references/polyaxonfile/orchestration/hooks/overview/) can trigger follow-up actions when runs
 finish.
 
 Automation is useful when a process is understood well enough to repeat. It can

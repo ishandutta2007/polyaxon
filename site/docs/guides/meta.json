@@ -1,10 +1,8 @@
 {
   "title": "Guides",
   "pages": [
-    "scaling",
     "query-metadata-artifacts",
     "tensorboard",
-    "automation",
     "serving",
     "builds"
   ]

@@ -1,5 +1,6 @@
 ---
 title: "Context Globals"
+sidebarTitle: "Globals"
 description: "This is the information that is unique to each run. Each run in Polyaxon has a project, an owner, and a user. It has as well several metadata like datetimes, e.g. time of creation, as well as information specific to the kind and runtime of the operation."
 ---
 
@@ -52,7 +53,7 @@ If the Polyaxonfile contains a service runtime, the globals prefix will include 
 
 ## Schedules
 
-When an operation is automatically created by a [schedule](/docs/references/polyaxonfile/automation/schedules/overview/), the globals prefix will include additionally these information:
+When an operation is automatically created by a [schedule](/docs/references/polyaxonfile/orchestration/schedules/overview/), the globals prefix will include additionally these information:
 
  * `{{ globals.schedule_at }}`: Datetime when the operation was supposed to be scheduled.
 

@@ -1,5 +1,6 @@
 ---
 title: "Operation Specification"
+sidebarTitle: "Operation"
 description: "An operation is how Polyaxon executes a component by passing parameters, connections, and a run environment."
 ---
 
@@ -25,7 +26,7 @@ With an operation users can:
 After resolution and compilation, Polyaxon will prepare an executable
 that will be scheduled on Kubernetes:
 
-![polyaxonfile operation](../../../../content/images/references/specification/operation.png)
+![polyaxonfile operation](/images/references/specification/operation.png)
 
 - __Args__:
   - __version__: str
@@ -43,17 +44,17 @@ that will be scheduled on Kubernetes:
   - __termination__: [V1Termination](/docs/references/polyaxonfile/specification/termination/), optional
   - __plugins__: [V1Plugins](/docs/references/polyaxonfile/specification/plugins/), optional
   - __params__: Dict[str, [V1Param](/docs/references/polyaxonfile/specification/params/)], optional
-  - __schedule__: Union[[V1CronSchedule](/docs/references/polyaxonfile/automation/schedules/cron/), [V1IntervalSchedule](/docs/references/polyaxonfile/automation/schedules/interval/), [V1DateTimeSchedule](/docs/references/polyaxonfile/automation/schedules/datetime/)], optional
-  - __events__: List[[V1EventTrigger](/docs/references/polyaxonfile/automation/events/)], optional
+  - __schedule__: Union[[V1CronSchedule](/docs/references/polyaxonfile/orchestration/schedules/cron/), [V1IntervalSchedule](/docs/references/polyaxonfile/orchestration/schedules/interval/), [V1DateTimeSchedule](/docs/references/polyaxonfile/orchestration/schedules/datetime/)], optional
+  - __events__: List[[V1EventTrigger](/docs/references/polyaxonfile/orchestration/events/specification/)], optional
   - __mount__: List[[V1Mount](/docs/references/polyaxonfile/specification/mount/)], optional
-  - __build__: [V1Build](/docs/references/polyaxonfile/automation/build/), optional
-  - __hooks__: List[[V1Hook](/docs/references/polyaxonfile/automation/hooks/)], optional
-  - __matrix__: Union[[V1Mapping](/docs/references/polyaxonfile/automation/mapping/), [V1GridSearch](/docs/references/polyaxonfile/automation/matrix/grid-search/), [V1RandomSearch](/docs/references/polyaxonfile/automation/matrix/random-search/), [V1Hyperband](/docs/references/polyaxonfile/automation/matrix/hyperband/), [V1Bayes](/docs/references/polyaxonfile/automation/matrix/bayesian-optimization/), [V1Hyperopt](/docs/references/polyaxonfile/automation/matrix/hyperopt/), [V1Iterative](/docs/references/polyaxonfile/automation/matrix/iterative/)], optional
-  - __joins__: List[[V1Join](/docs/references/polyaxonfile/automation/joins/)], optional
-  - __dependencies__: [dependencies](/docs/references/polyaxonfile/automation/dependencies/#dependencies), optional
-  - __trigger__: [trigger](/docs/references/polyaxonfile/automation/dependencies/#trigger), optional
+  - __build__: [V1Build](/docs/references/polyaxonfile/orchestration/build/specification/), optional
+  - __hooks__: List[[V1Hook](/docs/references/polyaxonfile/orchestration/hooks/specification/)], optional
+  - __matrix__: Union[[V1Mapping](/docs/references/polyaxonfile/orchestration/mapping/specification/), [V1GridSearch](/docs/references/polyaxonfile/orchestration/matrix/grid-search/), [V1RandomSearch](/docs/references/polyaxonfile/orchestration/matrix/random-search/), [V1Hyperband](/docs/references/polyaxonfile/orchestration/matrix/hyperband/), [V1Bayes](/docs/references/polyaxonfile/orchestration/matrix/bayesian-optimization/), [V1Hyperopt](/docs/references/polyaxonfile/orchestration/matrix/hyperopt/), [V1Iterative](/docs/references/polyaxonfile/orchestration/matrix/iterative/)], optional
+  - __joins__: List[[V1Join](/docs/references/polyaxonfile/orchestration/joins/specification/)], optional
+  - __dependencies__: [dependencies](/docs/references/polyaxonfile/orchestration/dag/dependencies/#dependencies), optional
+  - __trigger__: [trigger](/docs/references/polyaxonfile/orchestration/dag/dependencies/#trigger), optional
   - __conditions__: [conditions](/docs/scheduling/scheduling-strategies/conditional-scheduling/#conditional-scheduling), optional
-  - __skip_on_upstream_skip__: [skip_on_upstream_skip](/docs/references/polyaxonfile/automation/dependencies/#skiponupstreamskip), optional
+  - __skip_on_upstream_skip__: [skip_on_upstream_skip](/docs/references/polyaxonfile/orchestration/dag/dependencies/#skiponupstreamskip), optional
   - __run_patch__: Dict, optional
   - __hub_ref__: str, optional
   - __dag_ref__: str, optional
@@ -336,7 +337,7 @@ operation:
 
 ### build
 
-> **Note**: Please check [V1Build](/docs/references/polyaxonfile/automation/build/) for more details.
+> **Note**: Please check [V1Build](/docs/references/polyaxonfile/orchestration/build/specification/) for more details.
 
 This section defines if this operation should build a container before starting the main logic.
 If the build section is provided, Polyaxon will set the main operation to a pending state
@@ -359,14 +360,14 @@ for example the container's resources or the environment section.
 The run patch is a dictionary that can modify most of the runtime information and
 will be resolved against the corresponding run kind:
 
- * [V1Job](/docs/references/polyaxonfile/runtimes/job/): for running batch jobs, model training experiments, data processing jobs, ...
- * [V1Service](/docs/references/polyaxonfile/runtimes/service/): for running tensorboards, notebooks, streamlit, custom services or an API.
+ * [V1Job](/docs/references/polyaxonfile/runtimes/jobs/specification/): for running batch jobs, model training experiments, data processing jobs, ...
+ * [V1Service](/docs/references/polyaxonfile/runtimes/services/specification/): for running tensorboards, notebooks, streamlit, custom services or an API.
  * [V1TFJob](/docs/references/polyaxonfile/runtimes/distributed/tf-jobs/): for running distributed Tensorflow training job.
  * [V1PytorchJob](/docs/references/polyaxonfile/runtimes/distributed/pytorch-jobs/): for running distributed Pytorch training job.
  * [V1MPIJob](/docs/references/polyaxonfile/runtimes/distributed/mpi-jobs/): for running distributed MPI job.
  * [V1RayCluster](/docs/references/polyaxonfile/runtimes/clusters/ray-clusters/): for running a Ray cluster.
  * [V1DaskCluster](/docs/references/polyaxonfile/runtimes/clusters/dask-clusters/): for running a Dask cluster.
- * [V1Dag](/docs/references/polyaxonfile/automation/dag/): for running a DAG/workflow.
+ * [V1Dag](/docs/references/polyaxonfile/orchestration/dag/specification/): for running a DAG/workflow.
 
 For example, if we define a generic component for running Jupyter Notebook:
 
@@ -431,7 +432,7 @@ hubRef: myComponent:v1.1
 
 If you are building a dag and you have a component that can be used by several operations,
 you can define a component and reuse it in all operations using `dagRef`.
-Please check Polyaxon automation's [flow engine section](/docs/orchestration/flow-engine/)
+Please check Polyaxon orchestration's [flow engine section](/docs/references/polyaxonfile/orchestration/dag/overview/)
 for more details.
 
 ### urlRef
@@ -503,5 +504,4 @@ it can map directly to the cost of using the environment where the operation is 
 ```yaml
 cost: 2.2
 ```
-
 

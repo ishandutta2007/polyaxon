@@ -19,7 +19,7 @@ import {
 
 ## Experiment Tracking [#tracking]
 
-[Experiment Tracking](/docs/tracking) captures every detail of your ML experiments — hyperparameters, metrics, code versions, data lineage, and output artifacts. Compare runs side-by-side and visualize training curves in real time.
+[Experiment Tracking](/docs/tracking/overview) captures every detail of your ML experiments — hyperparameters, metrics, code versions, data lineage, and output artifacts. Compare runs side-by-side and visualize training curves in real time.
 
 - Log metrics, parameters, and artifacts with the Python SDK
 - Compare and visualize runs with built-in dashboards
@@ -33,10 +33,10 @@ import TrackingOverview from "@/components-mdx/tracking-overview-gifs.mdx";
 
 ## Orchestration [#orchestration]
 
-[Orchestration](/docs/orchestration) lets you compose multi-step ML workflows with DAGs, run hyperparameter sweeps, and schedule recurring pipelines — all with a declarative YAML specification.
+[Orchestration](/docs/references/polyaxonfile/orchestration/overview) lets you compose multi-step ML workflows with DAGs, run hyperparameter sweeps, and schedule recurring pipelines — all with a declarative YAML specification.
 
-- Build DAGs with the [flow engine](/docs/orchestration) for multi-step pipelines
-- Run hyperparameter optimization with grid, random, Bayesian, and [Hyperband](/docs/orchestration) strategies
+- Build DAGs with the [flow engine](/docs/references/polyaxonfile/orchestration/dag/overview/) for multi-step pipelines
+- Run hyperparameter optimization with grid, random, Bayesian, and [Hyperband](/docs/references/polyaxonfile/orchestration/matrix/overview/) strategies
 - Schedule recurring jobs with cron, interval, or datetime triggers
 - Chain operations with hooks and events for automation
 
@@ -61,10 +61,10 @@ import SandboxOverview from "@/components-mdx/sandbox-overview-gifs.mdx";
 
 ## Model Registry [#registry]
 
-[Model Registry](/docs/registry) provides a centralized catalog for versioning, staging, and promoting models and artifacts across your ML lifecycle.
+[Model Registry](/docs/registry/overview) provides a centralized catalog for versioning, staging, and promoting models and artifacts across your ML lifecycle.
 
 - Version and promote models through staging, production, and archived stages
-- Share reusable components via the [Component Hub](/docs/registry)
+- Share reusable components via the [Component Hub](/docs/registry/component-hub/overview)
 - Track artifact versions with full lineage back to training runs
 
 import RegistryOverview from "@/components-mdx/prompt-overview-gifs.mdx";
@@ -112,12 +112,12 @@ Get up and running with Polyaxon in minutes. Choose the path that best fits your
 
 ## Community & Contact
 
-We actively develop Polyaxon in [open source](/open-source) together with our community:
+We actively develop Polyaxon in [open source](https://github.com/polyaxon/polyaxon) together with our community:
 
 - Contribute and vote on the Polyaxon [roadmap](/docs/more/roadmap).
 - Ask questions on [GitHub Discussions](/gh-support) or private [support channels](/support).
 - Report bugs via [GitHub Issues](/issue).
-- Chat with the community on [Discord](/discord).
+- Chat with the community on [Slack](/community).
 - [Why people choose Polyaxon?](/#why-polyaxon)
 
 Polyaxon evolves quickly, check out the [changelog](/changelog) for the latest updates. Subscribe to the **mailing list** to get notified about new major features:

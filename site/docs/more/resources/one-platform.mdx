@@ -43,7 +43,7 @@ agent validation jobs.
 
 Polyaxon schedules that work on Kubernetes using jobs, services, queues,
 agents, presets, DAGs, schedules, hooks, and matrix executions. Teams can use
-the [orchestration](/docs/orchestration/overview/) layer to move from manual
+the [orchestration](/docs/references/polyaxonfile/orchestration/overview/) layer to move from manual
 experiments to repeatable workflows without replacing the runtime model.
 
 This gives platform teams one execution surface to secure, route, scale, and
@@ -59,7 +59,7 @@ calls, latency, token usage, and cost.
 
 Polyaxon supports both. The [tracking API](/docs/tracking/logging/overview/)
 captures the context around model development and workload execution.
-[Observability](/docs/observability/overview/) captures what happens inside LLM
+[Observability](/docs/tracking/runs-dashboard/monitoring) captures what happens inside LLM
 requests and multi-step agents.
 
 This is where one platform pays for itself. A team can debug across the boundary
@@ -72,7 +72,7 @@ Evaluation is not one thing. A training run may need validation metrics and
 model comparison. An LLM application may need fixed datasets, human annotations,
 LLM-as-judge scores, custom scorers, and live evaluators over production traces.
 
-Polyaxon [Evaluation](/docs/evaluation/overview/) gives teams a shared place to
+Polyaxon [Evaluation](/docs/more/resources/ai-agent-lifecycle) gives teams a shared place to
 run and review those checks. Evaluation results can connect back to prompts,
 traces, datasets, runs, and release decisions.
 
@@ -86,7 +86,7 @@ components, prompts, datasets, labels, and deployment stages all need versions
 and metadata.
 
 Polyaxon provides registries for [models](/docs/registry/model-registry/),
-artifacts, components, and [prompts](/docs/prompt-management/overview). Teams
+artifacts, components, and [prompts](/docs/registry/prompt-management/overview). Teams
 can promote candidates, label versions by environment, preserve lineage, and
 connect registry entries to the runs, traces, and evaluations that justify
 them.

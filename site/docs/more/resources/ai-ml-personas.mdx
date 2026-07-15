@@ -28,7 +28,7 @@ metric comparisons, visualizations, and a path from training output to model
 version. Polyaxon supports that work through
 [tracking](/docs/tracking/logging/overview/), the
 [runs dashboard](/docs/tracking/runs-dashboard/overview/),
-[orchestration](/docs/orchestration/overview/), and the
+[orchestration](/docs/references/polyaxonfile/orchestration/overview/), and the
 [model registry](/docs/registry/model-registry/).
 
 The practical problem is not just "train a better model." It is knowing which
@@ -43,7 +43,7 @@ fallbacks, streaming, latency, retries, and integration with the product.
 
 They need traces that show what happened inside a request: prompts, context,
 model responses, tool calls, token usage, latency, costs, errors, and final
-outputs. Polyaxon [Observability](/docs/observability/overview/) provides that
+outputs. Polyaxon [Observability](/docs/tracking/runs-dashboard/monitoring) provides that
 debugging surface for LLM applications and multi-step agents.
 
 This role sits at an awkward boundary. The bug may be in code, a prompt, a
@@ -74,7 +74,7 @@ experts.
 
 They need prompt changes to be reviewable without requiring a full code
 deployment for every text edit. Polyaxon
-[Prompt Management](/docs/prompt-management/overview) lets teams version,
+[Prompt Management](/docs/registry/prompt-management/overview) lets teams version,
 label, retrieve, and connect prompts to traces and evaluation results.
 
 Prompt work should not be a private document pasted into code. If a prompt
@@ -91,7 +91,7 @@ For ML systems, this may include validation metrics, benchmark datasets, model
 comparison, and artifact review. For AI agents, it may include human
 annotations, custom scorers, LLM-as-judge workflows, live evaluators, and
 trace-based regression cases. Polyaxon
-[Evaluation](/docs/evaluation/overview/) gives these checks a shared place to
+[Evaluation](/docs/more/resources/ai-agent-lifecycle) gives these checks a shared place to
 run and review.
 
 The hard part is not creating one score. The hard part is making the score mean

@@ -82,7 +82,7 @@ To pass `test 1` and `test 2` to our program without invoking the CLI multiple t
 polyaxon run -f echo.yaml -HP message='choice:["test 1","test 2"]'
 ```
 
-This command will automatically create a [grid search](/docs/guides/scaling/hyperparameter-tuning/#grid-search) with the following matrix configuration:
+This command will automatically create a [grid search](/docs/scaling/hyperparameter-tuning/#grid-search) with the following matrix configuration:
 
 ```yaml
 matrix:
@@ -96,13 +96,13 @@ matrix:
   concurrency: 1
 ```
 
-You should notice that the CLI uses the following format: `kind:value` to pass [hyperparameters](/docs/references/polyaxonfile/automation/matrix/params/), in this case it passes the `choice` kind.
-Another important aspect to notice is that matrix is of kind [grid search](/docs/references/polyaxonfile/automation/matrix/grid-search/) and it runs the operations sequentially by setting the `concurrency` to `1`.
+You should notice that the CLI uses the following format: `kind:value` to pass [hyperparameters](/docs/references/polyaxonfile/orchestration/matrix/params/), in this case it passes the `choice` kind.
+Another important aspect to notice is that matrix is of kind [grid search](/docs/references/polyaxonfile/orchestration/matrix/grid-search/) and it runs the operations sequentially by setting the `concurrency` to `1`.
 You can configure those options via CLI as well by passing the following extra arguments `--matrix-kind`, `--matrix-concurrency`, and `--matrix-num-runs`.
 
 The CLI arg `-HP` is a nice way to avoid creating configuration files when iterating, however if you are to create a complex operation with multiple inputs/outputs and complex matrix definition,
 we suggest that you use a proper Polyaxonfile.
-See the intro for the hyperparameter tuning in this [section](/docs/guides/scaling/hyperparameter-tuning/) and the [optimization engine reference](/docs/orchestration/optimization-engine/).
+See the intro for the hyperparameter tuning in this [section](/docs/scaling/hyperparameter-tuning/) and the [optimization engine reference](/docs/references/polyaxonfile/orchestration/matrix/overview/).
 
 ## Creating a custom program
 

@@ -7,7 +7,7 @@
     "polyaxonfile/specification",
     "polyaxonfile/context",
     "polyaxonfile/runtimes",
-    "polyaxonfile/automation",
+    "polyaxonfile/orchestration",
     "polyaxonfile/helpers",
     "---CLI---",
     "cli/overview",

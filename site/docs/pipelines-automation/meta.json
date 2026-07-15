@@ -1,0 +1,8 @@
+{
+  "title": "Pipelines & Orchestration",
+  "pages": [
+    "automation-dag",
+    "running-on-schedule",
+    "executing-hooks"
+  ]
+}

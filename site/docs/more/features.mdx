@@ -71,9 +71,9 @@ APIs, development environments, and sandbox sessions. Distributed and cluster
 runtimes cover larger training and compute jobs without changing the project
 record around the work.
 
-See [jobs](/docs/compute/jobs/overview/), [services](/docs/compute/services/overview/),
-[distributed workloads](/docs/distributed-compute/distributed-jobs/overview/), and
-[clusters](/docs/distributed-compute/clusters/overview/).
+See [jobs](/docs/references/polyaxonfile/runtimes/jobs/specification/), [services](/docs/references/polyaxonfile/runtimes/services/specification/),
+[distributed workloads](/docs/references/polyaxonfile/runtimes/distributed/overview/), and
+[clusters](/docs/references/polyaxonfile/runtimes/clusters/overview/).
 
 ## Sandboxes
 
@@ -100,10 +100,10 @@ Use platform automation when work should happen because something happened: a
 run finished, an evaluator failed, a webhook arrived, a spend threshold was
 crossed, or a schedule tick fired.
 
-See [events](/docs/orchestration/events/overview/),
-[schedules](/docs/orchestration/schedules/overview/),
-[scheduled runs](/docs/guides/automation/running-on-schedule/), and
-[hooks](/docs/guides/automation/executing-hooks/).
+See [events](/docs/references/polyaxonfile/orchestration/events/overview/),
+[schedules](/docs/references/polyaxonfile/orchestration/schedules/overview/),
+[scheduled runs](/docs/pipelines-automation/running-on-schedule/), and
+[hooks](/docs/pipelines-automation/executing-hooks/).
 
 ## Built-in flow engine
 
@@ -122,9 +122,9 @@ ML and AI processes. It handles:
 The flow engine lets teams move from one-off runs to repeatable workflows
 without switching execution systems.
 
-See [flow engine](/docs/orchestration/flow-engine/overview/),
-[orchestration](/docs/orchestration/overview/), and
-[DAG automation](/docs/guides/automation/automation-dag/).
+See [flow engine](/docs/references/polyaxonfile/orchestration/dag/overview/),
+[orchestration](/docs/references/polyaxonfile/orchestration/overview/), and
+[DAG automation](/docs/pipelines-automation/automation-dag/).
 
 ## Builds
 
@@ -133,7 +133,7 @@ contexts, build steps, init steps, and registry connections. Builds are normal
 operations, so they can use queues, resources, logs, artifacts, statuses, and
 permissions instead of living in a separate script.
 
-See [builds](/docs/orchestration/builds/overview/).
+See [builds](/docs/references/polyaxonfile/orchestration/build/overview/).
 
 ## Components and integrations
 
@@ -158,9 +158,9 @@ Optimization runs use the same scheduler as other workloads: queues, routing,
 resources, concurrency limits, caching, early stopping, lineage, artifacts, and
 metrics, so search jobs are governed like any other platform work.
 
-See the [optimization engine](/docs/orchestration/optimization-engine/overview/),
-[hyperparameter tuning](/docs/guides/scaling/hyperparameter-tuning/), and
-[matrix mapping](/docs/guides/scaling/mapping/).
+See the optimization engine's [search algorithms](/docs/references/polyaxonfile/orchestration/matrix/overview/),
+[hyperparameter tuning](/docs/scaling/hyperparameter-tuning/), and
+[matrix mapping](/docs/references/polyaxonfile/orchestration/mapping/overview/).
 
 ## AI gateway for LLMs
 
@@ -193,7 +193,7 @@ Platform observability covers the health of the Polyaxon deployment itself:
 gateway, scheduler, workers, agents, logs, health checks, infrastructure
 metrics, and error tracking integrations.
 
-See [application tracing](/docs/observability/overview/) and
+See [application tracing](/docs/tracking/runs-dashboard/monitoring) and
 [platform observability](/docs/setup/platform/observability/).
 
 ## Evaluation and alerts
@@ -208,8 +208,8 @@ changes. Polyaxon also supports operational alerts such as spend thresholds,
 and events can trigger follow-up operations when internal or external
 conditions are met.
 
-See [evaluations](/docs/evaluation/overview/) and
-[events](/docs/orchestration/events/overview/).
+See [evaluations](/docs/more/resources/ai-agent-lifecycle) and
+[events](/docs/references/polyaxonfile/orchestration/events/overview/).
 
 ## Tracking and reproducibility
 

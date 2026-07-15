@@ -1,5 +1,6 @@
 ---
-title: "Overview"
+title: "Polyaxonfile context"
+sidebarTitle: "Overview"
 description: "Polyaxon provides a context to all runs to resolve information about params, id, project, ...."
 ---
 
@@ -88,13 +89,13 @@ This means that when creating an operation, the params section can define condit
 When the compiler is done with the inputs, it moves to the outputs and performs a similar procedure. It's important to note that if both an input and an output have the same name,
 the context will only have one entry, if the output has a valid value, it will be the value used in the context.
 
-After finishing the params section, the next section is the params defined in [joins](/docs/references/polyaxonfile/automation/joins/).
+After finishing the params section, the next section is the params defined in [joins](/docs/references/polyaxonfile/orchestration/joins/overview/).
 This implies that users can leverage information coming from `globals.*` and `params.*` (or as a shortcut `*`).
 In general all values resolved in the joins params are lists, unless the values are defined using the [ArtifactsType](/docs/references/polyaxonfile/specification/types/#v1artifactstype),
 in which case the value is just a merged [ArtifactsType](/docs/references/polyaxonfile/specification/types/#v1artifactstype).
 
 After resolving the joins, all resulting values will be available in the context, and the compiler moves to the last params section, params defined in the matrix section
-([Optimization](/docs/references/polyaxonfile/automation/matrix/overview/) or [Mapping](/docs/references/polyaxonfile/automation/mapping/)).
+([Optimization](/docs/references/polyaxonfile/orchestration/matrix/overview/) or [Mapping](/docs/references/polyaxonfile/orchestration/mapping/overview/)).
 
 > **Note**: Please check the [context params section](/docs/references/polyaxonfile/context/params/) for more details.
 

@@ -2,8 +2,8 @@
   "title": "Runtimes",
   "pages": [
     "overview",
-    "job",
-    "service",
+    "jobs",
+    "services",
     "distributed",
     "clusters"
   ]
